@@ -1,0 +1,34 @@
+// *********************
+//       MIXINS
+// *********************
+
+=rounded
+  :-moz-border-radius     = !corner_radius
+  :-webkit-border-radius  = !corner_radius
+
+=margin-top(!height)
+  :margin-top = !blueprint_grid_width * !height
+
+=margin-bottom(!height)
+  :margin-bottom = !blueprint_grid_width * !height
+
+=padding-top(!height)
+  :padding-top = !blueprint_grid_width * !height
+
+=padding-bottom(!height)
+  :padding-bottom = !blueprint_grid_width * !height
+
+=row(!row_height)
+  :height = !blueprint_grid_width * !row_height
+
+=frame-layout(!w, !padding)
+  +column-base
+  //Calcul de base de la largeur utilisé dans le mixin =span, moins la largeur de la bordure verticale
+  :width = !blueprint_grid_width * !w + (!blueprint_grid_margin * (!w - 1)) - !border_width * 2 - !padding * 2
+  :padding = !padding
+
+=solid-border
+  :border
+    :style solid
+    :color = !border_color 
+    :width = !border_width

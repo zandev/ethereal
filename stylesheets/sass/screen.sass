@@ -1,0 +1,127 @@
+@import _constants.sass
+@import blueprint.sass
+@import blueprint/modules/scaffolding.sass
+@import compass/utilities.sass
+@import _mixins.sass
+@import _colors.sass
+
+html
+  :color = !text_color
+  :font
+    :family = !default_font_family
+    :size 13px
+
+h1
+  :font-size 200%
+h2
+  :font-size 150%
+h3
+  :font-size 130%
+h4
+  :font-size 115%
+
+li
+  +no-bullet
+
+a
+  +link-colors(!text_color, !lime, !orange, !text_color, !orange)
+  :text-decoration none
+
+p
+  :padding-bottom 1em
+
+.container
+  +container
+
+.hmenu
+  :display block 
+  .item
+    :float left
+    :padding .5em 0
+    a
+      :padding .5em 2ex
+
+span
+  :display inline
+
+.e
+  :color = !lime
+
+#header
+  +margin-top(1)
+  +padding-bottom(1)
+  :font-size 180%
+  :border-bottom = !border_width "solid" !border_color
+  .title
+    +column(17)
+    h2
+      :font-size 110%
+  a.logo
+    +rounded
+    +solid-border
+    :float left
+    :margin-right = !blueprint_grid_margin
+    :padding .1em .1em .25em .1em
+    :line-height .4
+    &:hover
+      .z
+        :color = !text_color_inverted
+
+.logo
+  :font-size 505%
+
+#navigation
+  //+margin-top(1)
+  +margin-bottom(1)
+  :font
+    :size 115%
+    :weight bold
+  //:border-bottom = !border_width "solid" !border_color
+  :padding 5px 0 
+  h3
+    :font-size 100%
+  .hmenu
+    :padding-top 4px
+    //:border-top = !border_width "solid" !border_color
+    .item 
+      :margin 1ex .5em 1ex 0
+      a
+        :border = !border_width "solid" !border_color
+        +rounded
+        &:hover
+          :border = !border_width "solid" !orange
+        &:active
+          :border = !border_width "solid" !lime
+    .last
+      :float right
+      :margin-right 0
+
+#content
+  +solid-border
+  +frame-layout(18, !blueprint_grid_margin)
+  +rounded
+
+#sidebar
+  +solid-border
+  +frame-layout(6, !blueprint_grid_margin)
+  +rounded
+  +last
+
+#footer
+  :margin
+    :top = !blueprint_grid_width
+  :border
+    :top
+      :style solid
+      :color = !border_color
+      :width = !border_width
+
+.img
+  +column(5, true)
+  +row(11)
+  +solid-border
+  :text-align right
+  :font-size 130%
+
+.last
+  +last
