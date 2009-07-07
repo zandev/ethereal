@@ -5,11 +5,17 @@
 @import _mixins.sass
 @import _colors.sass
 
-html
+body, html
   :color = !text_color
   :font
     :family = !default_font_family
-    :size 13px
+    :size 95%
+
+h1, h2, h3, h4
+  :padding
+    :top .5em
+    :bottom 1em
+  :text-transform lowercase
 
 h1
   :font-size 200%
@@ -24,11 +30,12 @@ li
   +no-bullet
 
 a
-  +link-colors(!text_color, !lime, !orange, !text_color, !orange)
+  +link-colors(!lime, !orange, !text_color_strong, !orange_dark, !text_color_strong)
   :text-decoration none
 
 p
   :padding-bottom 1em
+  :line-height 1.4
 
 .container
   +container
@@ -50,12 +57,14 @@ span
 #header
   +margin-top(1)
   +padding-bottom(1)
-  :font-size 180%
+  :font-size 160%
   :border-bottom = !border_width "solid" !border_color
   .title
-    +column(17)
+    +column(19)
+    :padding-top 1em
+    +last
     h2
-      :font-size 110%
+      :font-size 100%
   a.logo
     +rounded
     +solid-border
@@ -66,23 +75,22 @@ span
     &:hover
       .z
         :color = !text_color_inverted
+      .e
+        :color = !lime
 
 .logo
   :font-size 505%
 
 #navigation
-  //+margin-top(1)
   +margin-bottom(1)
   :font
     :size 115%
     :weight bold
-  //:border-bottom = !border_width "solid" !border_color
   :padding 5px 0 
   h3
     :font-size 100%
   .hmenu
     :padding-top 4px
-    //:border-top = !border_width "solid" !border_color
     .item 
       :margin 1ex .5em 1ex 0
       a
@@ -96,7 +104,7 @@ span
       :float right
       :margin-right 0
 
-#content
+body.redirect #content
   +solid-border
   +frame-layout(18, !blueprint_grid_margin)
   +rounded
@@ -106,6 +114,7 @@ span
   +frame-layout(6, !blueprint_grid_margin)
   +rounded
   +last
+  :float right
 
 #footer
   :margin
@@ -115,6 +124,22 @@ span
       :style solid
       :color = !border_color
       :width = !border_width
+
+body
+  &.articles, &.tags, &.categories 
+    .atomentry
+      +margin-bottom(1) 
+      +solid-border
+      +frame-layout(18, !blueprint_grid_margin)
+      +rounded
+
+ul.meta
+
+cite
+  :font-style italic
+
+abbr span.date
+  :border-bottom = !border_width "groove" !text_color
 
 .img
   +column(5, true)

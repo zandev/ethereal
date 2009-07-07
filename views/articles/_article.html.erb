@@ -4,10 +4,6 @@
     <%= content_tag(:span, article.published_comments.size, :class => 'comment_count') if article.published_comments.size > 0 %>
   </h2>
 
-  <p class="author">
-    <%= _("Posted by")%> <cite><%= author_link(article) %></cite>
-    <abbr class="published" title="<%= article.published_at.xmlschema %>"><%= js_distance_of_time_in_words_to_now article.published_at %></abbr>
-  </p>
 
   <div class="content">
     <%= article.html(:body) %>
@@ -24,14 +20,21 @@
   </div>
 
   <ul class="meta">
-    <%= content_tag(:li, category_links(article), :class => 'categories') unless article.categories.empty? %>
-    <%= content_tag(:li, tag_links(article), :class => 'tags') unless article.tags.empty? %>
-    <li><%= _("Meta") %>
-      <%= trackbacks_link(article) << ',' if article.allow_pings? %>
-      <%= comments_link(article) << ',' if article.allow_comments? %>
-      <a href="<%= article.permalink_url %>" rel="bookmark"><%=_("permalink")%></a>,
-      <a href="<%= @auto_discovery_url_rss %>">rss</a>,
-      <a href="<%= @auto_discovery_url_atom %>">atom</a>
+    <li class="author">
+      <%= _("Posted by")%> <cite><%= author_link(article) %></cite>
+      <abbr class="published" title="<%= article.published_at.xmlschema %>"><%= js_distance_of_time_in_words_to_now article.published_at %></abbr>
+    </li>
+
+    <li>
+      <%= trackbacks_link(article) if article.allow_pings? %>
+    </li>
+
+    <li>
+      <%= comments_link(article) if article.allow_comments? %>
+    </li>
+
+    <li>
+      <a href="<%= article.permalink_url %>" rel="bookmark"><%=_("permalink")%></a> 
     </li>
   </ul>
 </div>

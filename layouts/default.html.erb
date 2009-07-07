@@ -36,11 +36,11 @@
   </style>
 </head>
 
-<body>
+<body class="<%= controller_name %>" >
 
 <div id="header">
   <div class="container">
-    <a class="logo" href="/"><span class="z">z</span><span class="">e</span></a>
+    <a class="logo" href="/"><span class="z">z</span><span class="e">e</span></a>
     <div class="title">
       <h1>
         <span class="z">z</span>anshin<span class="e">e</span>
@@ -64,13 +64,13 @@
 </div>
 
 <div id="page" class="container">
+  <div id="sidebar">
+    <%= render_sidebars %>
+  </div>
+
   <div id="content">
     <%= @content_for_layout %>
     <%= javascript_tag 'show_dates_as_local_time()' %>
-  </div>
-
-  <div id="sidebar">
-    <%= render_sidebars %>
   </div>
 </div>
 
