@@ -7,6 +7,7 @@
 
 body, html
   :color = !text_color
+  :line-height 1.4
   :font
     :family = !default_font_family
     :size 95%
@@ -33,9 +34,40 @@ a
   +link-colors(!lime, !orange, !text_color_strong, !orange_dark, !text_color_strong)
   :text-decoration none
 
-p
+h1, h2
+  & a
+    +link-colors(!lime, !orange, !text_color_strong, !lime, !orange)
+
+p, ul, ol
+  //:font-family = !alternate_font_family
   :padding-bottom 1em
-  :line-height 1.4
+
+body
+  &.articles, &.tags, &.categories 
+    .atomentry, #viewpage
+      +margin-bottom(1) 
+      +solid-border
+      +frame-layout(18, !blueprint_grid_margin)
+      +rounded
+
+
+cite
+  :font-style italic
+
+abbr span.date
+  :border-bottom = !border_width "groove" !text_color
+
+pre
+  //+solid-border
+  :padding 1ex
+  :font-family = !monospace_font_family
+  :background-color = !orange
+  :color = !text_color_inverted
+  :font-weight bold
+
+pre +
+  & pre, & p, & h2
+    +margin-top(1)
 
 .container
   +container
@@ -51,6 +83,8 @@ p
 span
   :display inline
 
+.z
+  :color = !orange
 .e
   :color = !lime
 
@@ -61,8 +95,11 @@ span
   :border-bottom = !border_width "solid" !border_color
   .title
     +column(19)
-    :padding-top 1em
+    //:padding-top 1em
     +last
+    :line-height 1.2
+    h1, h2
+      :padding 0
     h2
       :font-size 100%
   a.logo
@@ -89,6 +126,8 @@ span
   :padding 5px 0 
   h3
     :font-size 100%
+    a
+      +link-colors(!text_color, !lime, !orange, !text_color)
   .hmenu
     :padding-top 4px
     .item 
@@ -103,6 +142,23 @@ span
     .last
       :float right
       :margin-right 0
+
+#content
+  :color = !text_color_strong
+  h1, h2, h3
+    :color = !text_color
+  li
+    :list-style-type disc
+    :margin-left = !blueprint_grid_margin
+  ul.meta 
+    :height 2em
+    li
+      :float right
+      +no-bullet
+      a
+        :padding 0 1em
+      &.author
+        :float left
 
 body.redirect #content
   +solid-border
@@ -125,22 +181,6 @@ body.redirect #content
       :color = !border_color
       :width = !border_width
 
-body
-  &.articles, &.tags, &.categories 
-    .atomentry
-      +margin-bottom(1) 
-      +solid-border
-      +frame-layout(18, !blueprint_grid_margin)
-      +rounded
-
-ul.meta
-
-cite
-  :font-style italic
-
-abbr span.date
-  :border-bottom = !border_width "groove" !text_color
-
 .img
   +column(5, true)
   +row(11)
@@ -150,3 +190,6 @@ abbr span.date
 
 .last
   +last
+
+.clearfix
+  +clearfix

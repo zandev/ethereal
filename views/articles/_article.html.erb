@@ -1,8 +1,8 @@
 <div class="atomentry" id="article-<%= article.id %>">
-  <h2 class="title">
+  <h1 class="title">
     <%= (controller.action_name.include? 'permalink') ? article.title : link_to_permalink(article,article.title) %>
     <%= content_tag(:span, article.published_comments.size, :class => 'comment_count') if article.published_comments.size > 0 %>
-  </h2>
+  </h1>
 
 
   <div class="content">
@@ -25,16 +25,13 @@
       <abbr class="published" title="<%= article.published_at.xmlschema %>"><%= js_distance_of_time_in_words_to_now article.published_at %></abbr>
     </li>
 
-    <li>
-      <%= trackbacks_link(article) if article.allow_pings? %>
-    </li>
-
-    <li>
+    <li class="links">
+      <% if article.allow_pings? %>
+        <%= trackbacks_link(article) %>
+      <% end%>
       <%= comments_link(article) if article.allow_comments? %>
-    </li>
-
-    <li>
       <a href="<%= article.permalink_url %>" rel="bookmark"><%=_("permalink")%></a> 
     </li>
+    <br class="clearfix"/>
   </ul>
 </div>

@@ -1,5 +1,6 @@
 body, html {
   color: #aaaaaa;
+  line-height: 1.4;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 95%; }
 
@@ -30,18 +31,59 @@ a {
   a:visited {
     color: #d2691e; }
   a:focus {
-    color: #333333; }
+    color: #666666; }
   a:hover {
     color: #ffa500; }
   a:active {
-    color: #333333; }
+    color: #666666; }
 
-p {
-  padding-bottom: 1em;
-  line-height: 1.4; }
+h1 a, h2 a {
+  color: #7baa0f; }
+  h1 a:visited, h2 a:visited {
+    color: #7baa0f; }
+  h1 a:focus, h2 a:focus {
+    color: #ffa500; }
+  h1 a:hover, h2 a:hover {
+    color: #ffa500; }
+  h1 a:active, h2 a:active {
+    color: #666666; }
+
+p, ul, ol {
+  padding-bottom: 1em; }
+
+body.articles .atomentry, body.articles #viewpage, body.tags .atomentry, body.tags #viewpage, body.categories .atomentry, body.categories #viewpage {
+  margin-bottom: 22px;
+  border-style: solid;
+  border-color: #cccccc;
+  border-width: 1px;
+  display: inline;
+  float: left;
+  margin-right: 20px;
+  width: 694px;
+  padding: 20px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px; }
+  * html body.articles .atomentry, * html body.articles #viewpage, * html body.tags .atomentry, * html body.tags #viewpage, * html body.categories .atomentry, * html body.categories #viewpage {
+    overflow-x: hidden; }
+
+cite {
+  font-style: italic; }
+
+abbr span.date {
+  border-bottom: 1px groove #aaaaaa; }
+
+pre {
+  padding: 1ex;
+  font-family: 'Lucida Console', Monaco, 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', monospace, 'Courier New';
+  background-color: #ffa500;
+  color: white;
+  font-weight: bold; }
+
+pre + pre, pre + p, pre + h2 {
+  margin-top: 22px; }
 
 .container {
-  width: 940px;
+  width: 988px;
   margin: 0 auto;
   overflow: hidden;
   display: inline-block; }
@@ -59,30 +101,35 @@ p {
 span {
   display: inline; }
 
+.z {
+  color: #ffa500; }
+
 .e {
   color: #7baa0f; }
 
 #header {
-  margin-top: 20px;
-  padding-bottom: 20px;
+  margin-top: 22px;
+  padding-bottom: 22px;
   font-size: 160%;
-  border-bottom: 1px solid #dddddd; }
+  border-bottom: 1px solid #cccccc; }
   #header .title {
     display: inline;
     float: left;
     margin-right: 20px;
-    width: 740px;
-    padding-top: 1em;
-    margin-right: 0; }
+    width: 778px;
+    margin-right: 0;
+    line-height: 1.2; }
     * html #header .title {
       overflow-x: hidden; }
+    #header .title h1, #header .title h2 {
+      padding: 0; }
     #header .title h2 {
       font-size: 100%; }
   #header a.logo {
     -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
     border-style: solid;
-    border-color: #dddddd;
+    border-color: #cccccc;
     border-width: 1px;
     float: left;
     margin-right: 20px;
@@ -97,18 +144,26 @@ span {
   font-size: 505%; }
 
 #navigation {
-  margin-bottom: 20px;
+  margin-bottom: 22px;
   font-size: 115%;
   font-weight: bold;
   padding: 5px 0; }
   #navigation h3 {
     font-size: 100%; }
+    #navigation h3 a {
+      color: #aaaaaa; }
+      #navigation h3 a:visited {
+        color: #aaaaaa; }
+      #navigation h3 a:hover {
+        color: #7baa0f; }
+      #navigation h3 a:active {
+        color: #ffa500; }
   #navigation .hmenu {
     padding-top: 4px; }
     #navigation .hmenu .item {
       margin: 1ex .5em 1ex 0; }
       #navigation .hmenu .item a {
-        border: 1px solid #dddddd;
+        border: 1px solid #cccccc;
         -moz-border-radius: 6px;
         -webkit-border-radius: 6px; }
         #navigation .hmenu .item a:hover {
@@ -119,14 +174,32 @@ span {
       float: right;
       margin-right: 0; }
 
+#content {
+  color: #666666; }
+  #content h1, #content h2, #content h3 {
+    color: #aaaaaa; }
+  #content li {
+    list-style-type: disc;
+    margin-left: 20px; }
+  #content ul.meta {
+    height: 2em; }
+    #content ul.meta li {
+      float: right;
+      list-style-type: none;
+      margin-left: 0px; }
+      #content ul.meta li a {
+        padding: 0 1em; }
+      #content ul.meta li.author {
+        float: left; }
+
 body.redirect #content {
   border-style: solid;
-  border-color: #dddddd;
+  border-color: #cccccc;
   border-width: 1px;
   display: inline;
   float: left;
   margin-right: 20px;
-  width: 658px;
+  width: 694px;
   padding: 20px;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px; }
@@ -135,12 +208,12 @@ body.redirect #content {
 
 #sidebar {
   border-style: solid;
-  border-color: #dddddd;
+  border-color: #cccccc;
   border-width: 1px;
   display: inline;
   float: left;
   margin-right: 20px;
-  width: 178px;
+  width: 190px;
   padding: 20px;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
@@ -150,41 +223,19 @@ body.redirect #content {
     overflow-x: hidden; }
 
 #footer {
-  margin-top: 20px;
+  margin-top: 22px;
   border-top-style: solid;
-  border-top-color: #dddddd;
+  border-top-color: #cccccc;
   border-top-width: 1px; }
-
-body.articles .atomentry, body.tags .atomentry, body.categories .atomentry {
-  margin-bottom: 20px;
-  border-style: solid;
-  border-color: #dddddd;
-  border-width: 1px;
-  display: inline;
-  float: left;
-  margin-right: 20px;
-  width: 658px;
-  padding: 20px;
-  -moz-border-radius: 6px;
-  -webkit-border-radius: 6px; }
-  * html body.articles .atomentry, * html body.tags .atomentry, * html body.categories .atomentry {
-    overflow-x: hidden; }
-
-
-cite {
-  font-style: italic; }
-
-abbr span.date {
-  border-bottom: 1px groove #aaaaaa; }
 
 .img {
   display: inline;
   float: left;
   margin-right: 0;
-  width: 180px;
-  height: 220px;
+  width: 190px;
+  height: 242px;
   border-style: solid;
-  border-color: #dddddd;
+  border-color: #cccccc;
   border-width: 1px;
   text-align: right;
   font-size: 130%; }
@@ -193,3 +244,9 @@ abbr span.date {
 
 .last {
   margin-right: 0; }
+
+.clearfix {
+  overflow: hidden;
+  display: inline-block; }
+  .clearfix {
+    display: block; }

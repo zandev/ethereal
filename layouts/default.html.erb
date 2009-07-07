@@ -1,19 +1,22 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <%= stylesheet_link_tag '/stylesheets/theme/reset', :media => 'screen, projection' %>
-    <%= stylesheet_link_tag '/stylesheets/theme/screen', :media => 'screen, projection' %>
-    <%= stylesheet_link_tag '/stylesheets/theme/print', :media => 'print' %>
-    <!--[if IE]>
-        <%= stylesheet_link_tag '/stylesheets/theme/ie.css', :media => 'screen, projection' %>
-    <![endif]-->
+  <%= stylesheet_link_tag '/stylesheets/theme/reset', :media => 'screen, projection' %>
+  <%= stylesheet_link_tag '/stylesheets/theme/screen', :media => 'screen, projection' %>
+  <%= stylesheet_link_tag '/stylesheets/theme/print', :media => 'print' %>
+  <!--[if IE]>
+    <%= stylesheet_link_tag '/stylesheets/theme/ie.css', :media => 'screen, projection' %>
+  <![endif]-->
+
+  <%= javascript_include_tag '/javascripts/curvycorners' %>
+
   <title><%=h page_title %></title>
   <%= page_header %>
   
   <style type="text/css">
-    <% @global_color = "#FFA500" %>
-    <%= Sass::Engine.new(
-    %Q{@import #{RAILS_ROOT + "/themes/ethereal/stylesheets/sass/_colors.sass"}
+  <% @global_color = "#FFA500" %>
+  <%= Sass::Engine.new(
+  %Q{@import #{RAILS_ROOT + "/themes/ethereal/stylesheets/sass/_colors.sass"}
 #header
   a.logo
     .z
@@ -54,12 +57,12 @@
 
 <div id="navigation" class="container">
   <ul class="hmenu">
+    <% @pages ||= Page.find(:all).sort_by {|t| t.name} %>
+    <% @pages.each do |page| %>
     <li class="item">
-      <h3><%= link_to 'about', '/pages/about' %></h3>
+    <h3><%= link_to page.name, "/pages/#{page.name}" %></h3>
     </li>
-    <li class="item">
-      <h3><%= link_to 'contact', '/pages/contact' %></h3>
-    </li>
+    <% end %>
   </ul>
 </div>
 
