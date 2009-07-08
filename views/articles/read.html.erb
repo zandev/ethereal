@@ -24,7 +24,7 @@
   </p>
 
   <% unless @article.published_trackbacks.blank? -%>
-  <ol id="trackbacks" class="trackbacks">
+  <ol id="trackbacks">
     <%= render(:partial => "trackback", :collection => @article.published_trackbacks) %>
   </ol>
   <% end -%>
@@ -40,9 +40,9 @@
     <p><a href="#commentform"><%= _("Leave a comment") %></a></p>
   <% end -%>
 
-  <div id="comments_div">
+  <ol id="comments">
     <%= render :partial => "comment_list" %>
-  </div>
+  </ol>
 <% end -%>
 
 <%= render :partial => 'comment_form' unless @article.comments_closed? %>
