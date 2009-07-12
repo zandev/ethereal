@@ -295,6 +295,10 @@ body.redirect #content {
   list-style-type: none;
   margin: 0 0 0 0;
 }
+#sidebar a.me {
+  border: 1px solid #ffa500;
+  padding: 1ex;
+}
 
 #footer {
   margin-top: 22px;
