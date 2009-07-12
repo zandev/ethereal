@@ -310,6 +310,7 @@ body.redirect #content {
   background-image: url(/images/theme/author-transparent.jpg);
   background-repeat: no-repeat;
   background-position: 50% 50%;
+  margin-bottom: 1em;
 }
 * html #sidebar a.me {
   overflow-x: hidden;
@@ -320,7 +321,7 @@ body.redirect #content {
   background-image: url(/images/theme/author.jpg);
   background-repeat: no-repeat;
   background-position: 50% 50%;
-  border-color: #ffa500;
+  border-color: white;
 }
 
 #footer {
