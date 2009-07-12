@@ -172,7 +172,14 @@ body.redirect #content
     :list-style-type none
     :margin 0 0 0 0
   a.me
-    +orange-box
+    +solid-border
+    :float left
+    +column(5)
+    :height 196px
+    +replace-text("/images/theme/author-transparent.jpg")
+    &:hover
+      +replace-text("/images/theme/author.jpg")
+      :border-color = !orange
 
 #footer
   :margin
@@ -188,3 +195,4 @@ body.redirect #content
 
 .clearfix
   +clearfix
+  :clear both

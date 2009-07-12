@@ -296,8 +296,31 @@ body.redirect #content {
   margin: 0 0 0 0;
 }
 #sidebar a.me {
-  border: 1px solid #ffa500;
-  padding: 1ex;
+  border-style: solid;
+  border-color: #cccccc;
+  border-width: 1px;
+  float: left;
+  display: inline;
+  float: left;
+  margin-right: 20px;
+  width: 190px;
+  height: 196px;
+  text-indent: -9999em;
+  overflow: hidden;
+  background-image: url(/images/theme/author-transparent.jpg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+* html #sidebar a.me {
+  overflow-x: hidden;
+}
+#sidebar a.me:hover {
+  text-indent: -9999em;
+  overflow: hidden;
+  background-image: url(/images/theme/author.jpg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  border-color: #ffa500;
 }
 
 #footer {
@@ -314,6 +337,7 @@ body.redirect #content {
 .clearfix {
   overflow: hidden;
   display: inline-block;
+  clear: both;
 }
 .clearfix {
   display: block;
