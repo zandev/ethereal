@@ -70,7 +70,7 @@ p, ul, ol {
 }
 
 body.articles .atomentry, body.articles #viewpage, body.tags .atomentry, body.tags #viewpage, body.categories .atomentry, body.categories #viewpage {
-  margin-bottom: 22px;
+  margin-bottom: 1em;
   border-style: solid;
   border-color: #cccccc;
   border-width: 1px;
@@ -102,8 +102,14 @@ pre {
   padding: 1ex;
 }
 
-pre + pre, pre + p, pre + h2 {
-  margin-top: 22px;
+blockquote {
+  border: 1px solid #cccccc;
+  padding: 1ex;
+  font-style: italic;
+}
+
+blockquote + pre, blockquote + p, blockquote + h2, pre + pre, pre + p, pre + h2 {
+  margin-top: 1em;
 }
 
 .container {
@@ -129,8 +135,8 @@ span {
 }
 
 #header {
-  margin-top: 22px;
-  padding-bottom: 22px;
+  margin-top: 1em;
+  padding-bottom: 1em;
   font-size: 160%;
   border-bottom: 1px solid #cccccc;
 }
@@ -174,8 +180,8 @@ span {
 }
 
 #navigation {
-  margin-top: 22px;
-  margin-bottom: 22px;
+  margin-top: 1em;
+  margin-bottom: 1em;
   font-size: 115%;
   font-weight: bold;
 }
